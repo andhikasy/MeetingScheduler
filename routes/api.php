@@ -16,8 +16,9 @@ use Illuminate\Http\Request;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-Route::get('/login-admin', 'LoginController@getLoginForm');
-Route::post('/login-admin', 'LoginController@doLogin');
+Auth::routes();
+Route::get('/adm/admin', 'LoginController@getLoginForm')->name('admin');
+Route::post('/adm/admin', 'LoginController@doLogin');
 
 
 Route::group(['prefix' => 'v1'], function() {

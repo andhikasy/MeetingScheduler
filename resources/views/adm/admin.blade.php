@@ -12,17 +12,27 @@
 		    <h2 class="text-center">Login Now</h2>
 
 		    <form class="login-form">
-          <form action="login-admin" method="POST">
+          <form action="{{ route('admin') }}" method="POST">
             {{ csrf_field() }}
-  <div class="form-group">
+
+  <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
     <label for="exampleInputEmail1" class="text-uppercase">Email</label>
-    <input type="email" name="email" for="" class="form-control" placeholder="email address">
-    {{$errors->first('email')}}
+    <input type="email" name="email" value="{{ old('email') }}" class="form-control" placeholder="email address">
+    @if ($errors->has('email'))
+        <span class="help-block">
+            <strong>{{ $errors->first('email') }}</strong>
+        </span>
+    @endif
   </div>
-  <div class="form-group">
+
+  <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
     <label for="exampleInputPassword1" class="text-uppercase">Password</label>
-    <input type="password" name="password" class="form-control" placeholder="password">
-    {{$errors->first('password')}}
+    <input type="password" name="password" value="{{ old('password') }}" class="form-control" placeholder="password">
+    @if ($errors->has('password'))
+        <span class="help-block">
+            <strong>{{ $errors->first('password') }}</strong>
+        </span>
+    @endif
   </div>
 
     <div class="form-check">
