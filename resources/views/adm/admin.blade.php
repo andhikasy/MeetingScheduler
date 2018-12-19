@@ -44,7 +44,7 @@
   </div>
 
 </form>
-<div class="copy-text">Created with <i class="fa fa-heart"></i> by <a href="http://grafreez.com">Grafreez.com</a></div>
+<div class="copy-text">Created with <i class="fa fa-heart"></i> by <a href="http://grafreez.com">Meeting Schedular</a></div>
 		</div>
 		<div class="col-md-8 banner-sec">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
